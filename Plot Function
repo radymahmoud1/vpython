@@ -1,0 +1,12 @@
+Web VPython 3.2
+
+g = graph(title='Trig Func', xtitle='points', ytitle='f(x)')
+f1 = gcurve(color=color.red)
+f2 = gcurve(color=color.green)
+
+x=0
+while x<10:
+    #rate(10)
+    f1.plot( x , cos(x) )
+    f2.plot( x , sin(x) )
+    x += 0.01
