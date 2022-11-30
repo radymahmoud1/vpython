@@ -1,0 +1,35 @@
+Web VPython 3.2
+
+#Ball Examples
+
+'''
+ball_1 = sphere(pos=vec(0,0,0), radius=1)
+ball_2 = sphere(pos=vec(2,0,0), radius=1)
+ball_3 = sphere(pos=vec(4,0,0), radius=1)
+'''
+
+#Cube Examples
+
+'''
+cube_1= box(pos=vec(0,0.5,0), length=1,height=1,width=1)
+cube_2= box(pos=vec(2,1,0), length=1,height=2,width=1)
+cube_3= box(pos=vec(4,1.5,0), length=1,height=3,width=1)
+'''
+
+#Rod Examples
+
+'''
+rod_1 = cylinder(pos=vec(0,0,0),axis=vec(2,0,0), radius=0.2)
+rod_2 = cylinder(pos=vec(0,0,0),axis=vec(0,2,0), radius=0.2)
+'''
+
+#Vector Examples
+
+myvector_1=arrow(pos=vec(0,0,0), axis=vec(2,0,0), shaftwidth=0.01)
+myvector_2=arrow(pos=vec(0,0,0), axis=vec(-2,0,0), shaftwidth=0.01)
+myvector_3=arrow(pos=vec(0,0,0), axis=vec(0,2,0), shaftwidth=0.01)
+myvector_4=arrow(pos=vec(0,0,0), axis=vec(0,-2,0), shaftwidth=0.01)
+
+ball_1 = sphere(pos=vec(1,1,0), radius=0.2,color=color.red)
+cube_1= box(pos=vec(-1,1,0), length=0.2,height=0.2,width=0.2,color=color.green)
+rod_1 = cylinder(pos=vec(-1,-1,0),axis=vec(0.5,0,0), radius=0.2,color=color.blue)
