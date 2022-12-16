@@ -1,0 +1,40 @@
+Web VPython 3.2
+#I've used glowscript to write this code
+spring_graph = graph(xtitle='seconds',ytitle='y_position')
+spring_curve = gcurve(color=color.green, label='Spring')
+
+plane= box(pos=vec(0,0,0), size=vec(0.1,0.01,0.1))
+ball= sphere(pos=vec(0.07,-0.33,0),radius=0.02,color=color.green)
+spring= helix(pos=plane.pos, axis = ball.pos-plane.pos, radius=0.02)
+
+L0=0.21
+k=9
+ball.m = 0.06
+L = ball.pos-plane.pos
+s = mag(L)-L0
+g = vec(0,9.8,0)
+Lhat = L/mag(L)
+ball.p = vec(0,0,0)
+
+t=0
+dt=0.001
+
+# Attach Trail & Momentum Vector
+my_trail=attach_trail(ball)
+#momentum_vector= attach_arrow(ball, 'p', scale=10, shaftwidth=0.02,color=color.red)
+
+while(t<10):
+    rate(1000)
+    F_grav = -ball.m*g
+    L = ball.pos-plane.pos
+    s = mag(L)-L0
+    Lhat = L/mag(L)
+    F_s = -k*s*Lhat
+    F_net = F_s + F_grav
+    ball.F = F_net
+    #F_vector= attach_arrow(ball, 'F', scale=1, shaftwidth=0.02,color=color.blue)
+    ball.p = ball.p + F_net*dt
+    ball.pos = ball.pos + (ball.p/ball.m)*dt
+    spring.axis=L
+    spring_curve.plot(t,ball.pos.y)
+    t=t+dt
